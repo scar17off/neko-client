@@ -1,0 +1,26 @@
+{
+  "name": "neko-client",
+  "version": "0.1.0",
+  "description": "A client for the ourworldofpixels website",
+  "scripts": {
+    "start": "",
+    "build": "npx esbuild src/js/main.js --bundle --outfile=src/bundle.js --loader:.mp3=dataurl --loader:.png=dataurl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "The Unlicense",
+  "bugs": {
+    "url": "https://github.com/"
+  },
+  "homepage": "https://github.com/",
+  "devDependencies": {
+    "esbuild": "^0.25.8"
+  },
+  "dependencies": {
+    "events": "^3.3.0"
+  }
+}

@@ -1,0 +1,8 @@
+/*
+!/src/
+!/dist/
+!/packages
+!/package.json
+!/.gitignore
+!/README.md
+/src/bundle.js
