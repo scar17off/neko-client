@@ -3,6 +3,9 @@ First you will need to [download the zip](https://raw.githubusercontent.com/Neko
 
 For older versions whenever those start existing will be provided using google services, this repository will only host the latest version for download.
 
+# Information
+You can also download the program on the [discord server](https://discord.gg/ChGDaWuHgH) but it is mostly used for questions to be asked or for me to provide information about updates.
+
 # For Developers
 If you want to clone the repo and run the program (after installing packages) you will need to build first then open the html file in src, this generates the bundle.js file which is used by the html file.
 
