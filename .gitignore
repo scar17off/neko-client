@@ -1,8 +1,6 @@
-/*
-!/src/
-!/dist/
-!/packages
-!/package.json
-!/.gitignore
-!/README.md
-/src/bundle.js
+src/
+dist/
+build/
+packages
+package-lock.json
+node_modules/
