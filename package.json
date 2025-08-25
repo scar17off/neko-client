@@ -4,7 +4,7 @@
   "description": "A client for the ourworldofpixels website",
   "scripts": {
     "start": "",
-    "build": "npx esbuild src/js/main.js --bundle --outdir=build --loader:.mp3=dataurl --loader:.png=dataurl && npx cpx \"src/**/*.{html,css,ico,woff,woff2,png,gif,mp3}\" build && npx cpx \"src/packages/**/*\" build/packages"
+    "build": "npx esbuild src/js/main.js --bundle --outdir=build --loader:.mp3=dataurl --loader:.png=dataurl && npx cpx \"src/**/*.{html,css,ico,woff,woff2,png,gif,mp3}\" build && npx cpx \"src/packages/**\" build/packages"
   },
   "repository": {
     "type": "git",

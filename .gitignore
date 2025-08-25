@@ -1,6 +1,5 @@
 dist/
 build/
-packages
 package-lock.json
 node_modules/
 dist/
