@@ -4,7 +4,7 @@
   "description": "A client for the ourworldofpixels website",
   "scripts": {
     "start": "",
-    "build": "npx esbuild src/js/main.js --bundle --outfile=src/bundle.js --loader:.mp3=dataurl --loader:.png=dataurl"
+    "build": "npx esbuild src/js/main.js --bundle --outdir=build --loader:.mp3=dataurl --loader:.png=dataurl && npx cpx \"src/**/*.{html,css,ico,woff,woff2,png,gif,mp3}\" build"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/",
   "devDependencies": {
+    "cpx": "^1.5.0",
     "esbuild": "^0.25.8"
   },
   "dependencies": {
