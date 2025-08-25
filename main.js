@@ -4764,7 +4764,7 @@
             script.onload = resolve2;
             script.onerror = reject2;
             document.head.appendChild(script);
-            script.src = "../packages/" + packageName + "/" + OWOP.packages[packageName].entry;
+            script.src = "./packages/" + packageName + "/" + OWOP.packages[packageName].entry;
           }).then(() => {
             resolve();
             console.log(packageName + " installed.");
@@ -4777,7 +4777,7 @@
           script.onload = resolve;
           script.onerror = reject;
           document.head.appendChild(script);
-          script.src = "../packages/" + packageName + "/" + OWOP.packages[packageName].entry;
+          script.src = "./packages/" + packageName + "/" + OWOP.packages[packageName].entry;
         }).then(() => {
           console.log(packageName + " installed.");
         });
@@ -4797,7 +4797,7 @@
       var packageIcon = document.createElement("img");
       var packageText = document.createElement("div");
       var packageInstallButton = document.createElement("button");
-      packageIcon.src = `../packages/${packageName}/icon.png`;
+      packageIcon.src = `./packages/${packageName}/icon.png`;
       packageIcon.onerror = function(event) {
         event.target.src = "./img/owop.png";
       };
@@ -4830,7 +4830,7 @@
     script.onload = resolve;
     script.onerror = reject;
     document.head.appendChild(script);
-    script.src = "../packages/packagelist.js";
+    script.src = "./packages/packagelist.js";
   }).then(function() {
     for (let packageName of OWOP.packages.packages) {
       new Promise(function(resolve, reject) {
@@ -4838,7 +4838,7 @@
         script.onload = resolve;
         script.onerror = reject;
         document.head.appendChild(script);
-        script.src = "../packages/" + packageName + "/manifest.js";
+        script.src = "./packages/" + packageName + "/manifest.js";
       }).then(function() {
         console.log(packageName + " added to package list");
       }).catch(function(err) {
