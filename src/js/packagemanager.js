@@ -1,5 +1,7 @@
 "use strict";
 
+const BASE_PATH = window.location.pathname.replace(/\/[^/]*$/, '') + '/';
+
 export var installedPackages = {};
 
 var packagesInstalled = false;
@@ -24,7 +26,7 @@ export async function installPackage(packageName) {
                     script.onload = resolve;
                     script.onerror = reject;
                     document.head.appendChild(script);
-                    script.src = "./packages/" + packageName + "/" + OWOP.packages[packageName].entry;
+                    script.src = `${BASE_PATH}packages/${packageName}/${OWOP.packages[packageName].entry}`;
                 }).then(() => { resolve(); console.log(packageName + " installed."); }).catch(reject);
             });
         } else {
@@ -34,7 +36,7 @@ export async function installPackage(packageName) {
                 script.onload = resolve;
                 script.onerror = reject;
                 document.head.appendChild(script);
-                script.src = "./packages/" + packageName + "/" + OWOP.packages[packageName].entry;
+                script.src = `${BASE_PATH}packages/${packageName}/${OWOP.packages[packageName].entry}`;
             }).then(() => { console.log(packageName + " installed."); });
             installedPackages[packageName] = promise;
             return promise;
@@ -55,7 +57,7 @@ export function packagesPopulator() {
         var packageText = document.createElement("div");
         var packageInstallButton = document.createElement("button");
 
-        packageIcon.src = `./packages/${packageName}/icon.png`;
+        packageIcon.src = `${BASE_PATH}packages/${packageName}/icon.png`;
 
         packageIcon.onerror = function (event) {
             event.target.src = "./img/owop.png";
@@ -94,7 +96,7 @@ new Promise(function (resolve, reject) {
     script.onload = resolve;
     script.onerror = reject;
     document.head.appendChild(script);
-    script.src = "./packages/packagelist.js";
+    script.src = `${BASE_PATH}packages/packagelist.js`;
 }).then(function () {
     for (let packageName of OWOP.packages.packages) {
         new Promise(function (resolve, reject) {
@@ -102,7 +104,7 @@ new Promise(function (resolve, reject) {
             script.onload = resolve;
             script.onerror = reject;
             document.head.appendChild(script);
-            script.src = "./packages/" + packageName + "/manifest.js";
+            script.src = `${BASE_PATH}packages/${packageName}/manifest.js`;
         }).then(function () {
             console.log(packageName + " added to package list");
         }).catch(function (err) {
@@ -110,5 +112,5 @@ new Promise(function (resolve, reject) {
         });
     }
 }).catch(function (err) {
-    console.log("packagelist.js doesnt exist in /packages/packagelist.js");
+    console.log("packagelist.js doesnt exist in " + `${BASE_PATH}packages/packagelist.js`);
 });
